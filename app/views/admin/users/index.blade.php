@@ -44,8 +44,9 @@
 				"oLanguage": {
 					"sLengthMenu": "_MENU_ records per page"
 				},
+              "bJQueryUI": true,
 				"bProcessing": true,
-		        "bServerSide": true,
+//		        "bServerSide": true,
 		        "sAjaxSource": "{{ URL::to('admin/users/data') }}",
 		        "fnDrawCallback": function ( oSettings ) {
 	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});

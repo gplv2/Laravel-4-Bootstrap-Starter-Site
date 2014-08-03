@@ -39,20 +39,39 @@
 @section('scripts')
 	<script type="text/javascript">
 		var oTable;
-		$(document).ready(function() {
-			oTable = $('#blogs').dataTable( {
-				"sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-				"sPaginationType": "bootstrap",
-				"oLanguage": {
-					"sLengthMenu": "_MENU_ records per page"
-				},
-				"bProcessing": true,
-		        "bServerSide": true,
+		jQuery(document).ready(function() {
+         $('body').css('cursor', 'wait');
+			oTable = jQuery('#blogs').dataTable( {
+				  "bProcessing": true,
+              "bLengthChange": true,
+              //"bFilter": true,
+              //"bStateSave": true,
+              "bInfo": true,
+		        //"bServerSide": true,
+              "bJQueryUI": true,
+              "aaSorting": [[ 1, "asc" ]],
 		        "sAjaxSource": "{{ URL::to('admin/blogs/data') }}",
+/*
 		        "fnDrawCallback": function ( oSettings ) {
 	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
-	     		}
+	     		  },
+*/
+              "fnCreatedRow": function( nRow, aData, iDataIndex ) {
+                    // if ( aData.eventState == 41 )
+                     //$('#blogs').effect("pulsate", { times: 2 }, 250);
+                     //$('body').css('cursor', 'progress');
+              },
+              "initComplete": function () {
+                     $('body').css('cursor', 'default');
+                     //console.log(oTable);
+              }
 			});
+        
+         //console.log(oTable);
+         $('body').css('cursor', 'default');
+         //$('#blogs').effect("pulsate", { times: 2 }, 250);
+         // oTable.fnReloadAjax();
 		});
 	</script>
 @stop
+
