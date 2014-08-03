@@ -6,12 +6,12 @@
 		<meta charset="utf-8" />
 		<title>
 			@section('title')
-			Laravel 4 Sample Site
+			Midi DevSite
 			@show
 		</title>
-		<meta name="keywords" content="your, awesome, keywords, here" />
-		<meta name="author" content="Jon Doe" />
-		<meta name="description" content="Lorem ipsum dolor sit amet, nihil fabulas et sea, nam posse menandri scripserit no, mei." />
+		<meta name="keywords" content="shared approach to projects" />
+		<meta name="author" content="Glenn Plas" />
+		<meta name="description" content="A service that helps small enterprises to provide professional feedback for running projects" />
 
 		<!-- Mobile Specific Metas
 		================================================== -->
@@ -26,6 +26,22 @@
         body {
             padding: 60px 0;
         }
+
+         #content {
+            padding-bottom:100px; /* Height of the footer element */
+         }
+
+         #footer {
+            background:#ffab62;
+            width:100%;
+            height:100px;
+            position:absolute;
+            bottom:0;
+            left:0;
+         }
+         #footer , p {
+            height:40px;
+         }
 		@section('styles')
 		@show
 		</style>
@@ -41,7 +57,7 @@
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{{ asset('assets/ico/apple-touch-icon-114-precomposed.png') }}}">
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{{ asset('assets/ico/apple-touch-icon-72-precomposed.png') }}}">
 		<link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}}">
-		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
+		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.ico') }}}">
 	</head>
 
 	<body>
@@ -101,7 +117,8 @@
 
 	    <div id="footer">
 	      <div class="container">
-	        <p class="muted credit">Laravel 4 Starter Site on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site">Github</a>.</p>
+	        <!-- <p class="muted credit">Laravel 4 Starter Site on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site">Github</a>.</p>-->
+	        <p class="muted credit">A <a href="{{{ URL::to('http://bitless.be') }}}">BitLess</a> idea..  </p>
 	      </div>
 	    </div>
 
